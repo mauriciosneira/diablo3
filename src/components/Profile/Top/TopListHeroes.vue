@@ -1,0 +1,26 @@
+<template>
+  <div class="top-heroes">
+    <h2 class="my-4 font-diablo">Top Heroes</h2>
+    <b-row>
+      <b-col sm="4" v-for="hero in heroes" :key="hero.id">
+        <item-hero :hero="hero"></item-hero>
+      </b-col>
+    </b-row>
+  </div>
+</template>
+
+<script>
+import ItemHero from './ItemHero'
+export default {
+    name: 'Top',
+    components: {
+        ItemHero
+    },
+    props: {
+        heroes: {
+            required: true,
+            type: Array
+        }
+    }
+}
+</script>
