@@ -21,9 +21,3 @@ export async function getToken ( {commit} ){
         commit('setLoading', false, { root: true })
     }
 }
-
-export function clearToken (context, parameters){
-    this.state.oauth.accessToken = null
-    context.dispatch('getToken')
-    context.dispatch('profile/getApiAccount', parameters, { root: true })
-}
